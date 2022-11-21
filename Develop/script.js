@@ -4,12 +4,11 @@
 
 var saveButton = $('.saveBtn')
 
-// Getting the values from save button
-
-$(saveButton).click
-
-
 // Attempting to get current day to display
+
+
+
+
 var dateArea = $('#currentDay');
 var currentDate = dayjs()
 dateArea.text(currentDate)
@@ -25,11 +24,45 @@ $('#text3pm').val(localStorage.text3pm)
 $('#text4pm').val(localStorage.text4pm)
 $('#text5pm').val(localStorage.text5pm)
 
-// Adding functionality for all save buttons
+// Saving to local storage with save button
+$('#save9am').on('click', function(){
+  localStorage.text9am = $('#text9am').val()
+})
 
+$('#save10am').on('click', function(){
+  localStorage.text10am = $('#text10am').val()
+})
+
+$('#save11am').on('click', function(){
+  localStorage.text11am = $('#text11am').val()
+})
+
+$('#save12pm').on('click', function(){
+  localStorage.text12pm = $('#text12pm').val()
+})
+
+$('#save1pm').on('click', function(){
+  localStorage.text1pm = $('#text1pm').val()
+})
+
+$('#save2pm').on('click', function(){
+  localStorage.text2pm = $('#text2pm').val()
+})
+
+$('#save3pm').on('click', function(){
+  localStorage.text3pm = $('#text3pm').val()
+})
+
+$('#save4pm').on('click', function(){
+  localStorage.text4pm = $('#text4pm').val()
+})
+
+$('#save5pm').on('click', function(){
+  localStorage.text5pm = $('#text5pm').val()
+})
 
 // Click for storing local data
-saveButton.on('click', storeData)
+// saveButton.on('click', storeData)
 
 
 
