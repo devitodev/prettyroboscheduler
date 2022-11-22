@@ -10,8 +10,72 @@ var saveButton = $('.saveBtn')
 
 
 var dateArea = $('#currentDay');
-var currentDate = dayjs()
-dateArea.text(currentDate)
+var currentDate = dayjs().format('MMM D , YYYY')
+
+var timeInterval = setInterval(myTimer, 1000)
+
+function myTimer() {
+  const newDay = new Date()
+  dateArea.text(currentDate + ' ' + newDay.toLocaleTimeString())
+}
+
+
+//   if (currentHour === textDataSetHour) {
+//     $(getTextArea).addClass("present");
+//     $(getTextArea).removeClass("future");
+//     $(getTextArea).removeClass("past");
+//   } else if (textDataSetHour > currentHour) {
+//     $(getTextArea).addClass("future");
+//     $(getTextArea).removeClass("past");
+//     $(getTextArea).removeClass("present");
+//   } else {
+//     $(getTextArea).addClass("past");
+//     $(getTextArea).removeClass("future");
+//     $(getTextArea).removeClass("present");
+//   }
+// }
+
+var getTextArea = document.querySelectorAll('textarea')
+var textDataSetHour = parseInt(getTextArea[0].dataset.hour)
+  var today = new Date()
+  var currentHour = parseInt(today.getHours())
+  console.log(currentHour)
+
+
+  function colorChange() {
+
+  }
+
+// Attempt 1: trying to use for loop to assign proper colors
+  // function changeHour() {
+
+//  for (let i = 0; i < getTextArea.length; i++) {
+    
+//     if (currentHour > textDataSetHour) {
+//       $('.past').attr('style', 'background-color: grey')
+//   }
+//     if (currentHour = textDataSetHour) {
+//       // color is green
+//       $('.present').attr('style', 'background-color: #b8e0d2')
+//   }
+//     if (currentHour < textDataSetHour) {
+//       // color is red
+//       $('.future').attr('style', 'background-color: #eac4d5')
+//   }
+   
+//   }}
+
+
+
+
+// Older trial 
+//   var hour = dayjs().hour()
+//   var hourArea = element.getAttribute("data-hour")
+//   console.log(hourArea)
+// }
+// changeHour()
+
+
 
 // Getting all local items
 $('#text9am').val(localStorage.text9am)
