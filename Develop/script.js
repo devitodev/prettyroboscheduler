@@ -19,32 +19,76 @@ function myTimer() {
   dateArea.text(currentDate + ' ' + newDay.toLocaleTimeString())
 }
 
-
-//   if (currentHour === textDataSetHour) {
-//     $(getTextArea).addClass("present");
-//     $(getTextArea).removeClass("future");
-//     $(getTextArea).removeClass("past");
-//   } else if (textDataSetHour > currentHour) {
-//     $(getTextArea).addClass("future");
-//     $(getTextArea).removeClass("past");
-//     $(getTextArea).removeClass("present");
-//   } else {
-//     $(getTextArea).addClass("past");
-//     $(getTextArea).removeClass("future");
-//     $(getTextArea).removeClass("present");
-//   }
-// }
-
+// Variables used to 1) grab textarea 2) get a number out of the hour string 3) get the current hour 
 var getTextArea = document.querySelectorAll('textarea')
 var textDataSetHour = parseInt(getTextArea[0].dataset.hour)
-  var today = new Date()
-  var currentHour = parseInt(today.getHours())
-  console.log(currentHour)
+var today = new Date()
+var currentHour = parseInt(today.getHours())
+// console.log(getTextArea)
+// console.log(textDataSetHour)
+// console.log(today)
+// console.log(currentHour)
 
 
+
+
+
+
+// Attempt 2 trying to get color assigning to work
   function colorChange() {
 
-  }
+    var getTextArea = document.querySelectorAll('textarea')
+    var textDataSetHour = parseInt(getTextArea[0].dataset.hour)
+    var today = new Date()
+    var currentHour = parseInt(today.getHours())
+    console.log(currentHour)
+    
+
+    // for (let i = 0; i < getTextArea.length; i++) {
+      
+      getTextArea.forEach(element => {
+
+
+        function helpMeImDying () {
+        if (textDataSetHour === currentHour) {
+               $(this).addClass("present");
+               $(this).removeClass("future");
+               $(this).removeClass("past");
+             } else if (textDataSetHour > currentHour) {
+               $(this).addClass("future");
+               $(this).removeClass("past");
+               $(this).removeClass("present");
+             } else {
+               $(this).addClass("past");
+               $(this).removeClass("future");
+               $(this).removeClass("present");
+               $(this).prop("disabled", true);
+             }
+      }})
+      
+     
+    } 
+    
+  // }
+  
+
+
+//    //conditions to determine what color to display
+//    if (calendarHour === currentHour) {
+//      $(this).addClass("present");
+//      $(this).removeClass("future");
+//      $(this).removeClass("past");
+//    } else if (calendarHour > currentHour) {
+//      $(this).addClass("future");
+//      $(this).removeClass("past");
+//      $(this).removeClass("present");
+//    } else {
+//      $(this).addClass("past");
+//      $(this).removeClass("future");
+//      $(this).removeClass("present");
+//      $(this).prop("disabled", true);
+//    }
+//  });
 
 // Attempt 1: trying to use for loop to assign proper colors
   // function changeHour() {
