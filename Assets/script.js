@@ -2,6 +2,7 @@ var saveButton = $('.saveBtn')
 var dateArea = $('#currentDay');
 var currentDate = dayjs().format('MMM D , YYYY')
 
+// Display correct time
 var timeInterval = setInterval(myTimer, 1000)
 
 function myTimer() {
