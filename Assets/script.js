@@ -38,6 +38,8 @@ if (textAreaTime < currentHour) {
 
 colorChange()
 
+// Updates the page with the correct color every 15 seconds
+setInterval(colorChange, 15000)   
 
 // Getting all local items
 $('#text9am').val(localStorage.text9am)
@@ -58,9 +60,6 @@ function saveItUp() {
   var value = $(this).siblings('.description').val()
   var timeNumber2 = $(this).parent().attr('id')
   localStorage.setItem(timeNumber2, value)
-
-  
-
 }
 
 $('#hour-9 .description').val(localStorage.getItem('hour-9'))
